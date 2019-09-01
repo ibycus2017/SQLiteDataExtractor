@@ -7,8 +7,20 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQLiteDataExtractor", "SQLi
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{71A475AE-0693-44C6-9643-DD0ECED0EA63}"
 	ProjectSection(SolutionItems) = preProject
+		SQLiteDataExtractor\bin\Release\EnvDTE.dll = SQLiteDataExtractor\bin\Release\EnvDTE.dll
 		SQLiteDataExtractor\bin\Release\Configration\FormParameters.xml = SQLiteDataExtractor\bin\Release\Configration\FormParameters.xml
 		SQLiteDataExtractor\bin\Release\Configration\Message.xml = SQLiteDataExtractor\bin\Release\Configration\Message.xml
+		SQLiteDataExtractor\bin\Release\Microsoft.VisualStudio.OLE.Interop.dll = SQLiteDataExtractor\bin\Release\Microsoft.VisualStudio.OLE.Interop.dll
+		SQLiteDataExtractor\bin\Release\Microsoft.VisualStudio.Shell.Interop.dll = SQLiteDataExtractor\bin\Release\Microsoft.VisualStudio.Shell.Interop.dll
+		SQLiteDataExtractor\bin\Release\Microsoft.VisualStudio.TextManager.Interop.dll = SQLiteDataExtractor\bin\Release\Microsoft.VisualStudio.TextManager.Interop.dll
+		SQLiteDataExtractor\bin\Release\SQLite.Designer.dll = SQLiteDataExtractor\bin\Release\SQLite.Designer.dll
+		SQLiteDataExtractor\bin\Release\SQLite.Interop.dll = SQLiteDataExtractor\bin\Release\SQLite.Interop.dll
+		SQLiteDataExtractor\bin\Release\SQLite簡易データ抽出ツール.exe = SQLiteDataExtractor\bin\Release\SQLite簡易データ抽出ツール.exe
+		SQLiteDataExtractor\bin\Release\SQLite簡易データ抽出ツール.exe.config = SQLiteDataExtractor\bin\Release\SQLite簡易データ抽出ツール.exe.config
+		SQLiteDataExtractor\bin\Release\stdole.dll = SQLiteDataExtractor\bin\Release\stdole.dll
+		SQLiteDataExtractor\bin\Release\System.Data.SQLite.dll = SQLiteDataExtractor\bin\Release\System.Data.SQLite.dll
+		SQLiteDataExtractor\bin\Release\System.Data.SQLite.EF6.dll = SQLiteDataExtractor\bin\Release\System.Data.SQLite.EF6.dll
+		SQLiteDataExtractor\bin\Release\System.Data.SQLite.Linq.dll = SQLiteDataExtractor\bin\Release\System.Data.SQLite.Linq.dll
 		SQLiteDataExtractor\bin\Release\汎用データ抽出ツール.exe = SQLiteDataExtractor\bin\Release\汎用データ抽出ツール.exe
 		SQLiteDataExtractor\bin\Release\汎用データ抽出ツール.exe.config = SQLiteDataExtractor\bin\Release\汎用データ抽出ツール.exe.config
 	EndProjectSection

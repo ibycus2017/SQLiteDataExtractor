@@ -7,7 +7,7 @@
     <ProjectGuid>{23D56D3F-CFC8-47B6-BF3C-0D46D0405B5C}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>SQLiteDataExtractor</RootNamespace>
-    <AssemblyName>汎用データ抽出ツール</AssemblyName>
+    <AssemblyName>SQLite簡易データ抽出ツール</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
