@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configration>
+  <form name="FrmConditionsSetting">
+    <caption>検索条件設定</caption>
+  </form>
+  <form name="FrmExtractionResults">
+    <caption>データ出力結果</caption>
+  </form>
+  <form name="FrmTableSelection">
+    <caption>表選択</caption>
+  </form>
+  <form name="FrmLogin">
+    <caption>ログイン</caption>
+  </form>
+  <form name="FrmConnectionChanges">
+    <caption>データベース接続情報変更</caption>
+  </form>
+  <form name="FrmFileExport">
+    <caption>ファイル出力</caption>
+  </form>
+</configration>
