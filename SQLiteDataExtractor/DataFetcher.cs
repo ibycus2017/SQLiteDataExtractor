@@ -71,7 +71,7 @@ namespace SQLiteDataExtractor
                     recordDefine = this.Conditions[i];
                     stringBuilder.Append((i == 0) ? " where ": " and ");
                     stringBuilder.Append(recordDefine.ColumnName + " " + recordDefine.Operator + "@" + Convert.ToString(i));
-                    sqlCommand.Parameters.Add(new SqlParameter("@" + Convert.ToString(i), recordDefine.SearchValue));
+                    sqlCommand.Parameters.Add(new SQLiteParameter("@" + Convert.ToString(i), recordDefine.SearchValue));
                 }
             }
             return Convert.ToString(stringBuilder);
