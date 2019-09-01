@@ -172,7 +172,7 @@ namespace SQLiteDataExtractor
             comboBox.DataSource = dataTable;
             comboBox.ValueMember = "value";
             comboBox.DisplayMember = "display";
-            comboBox.SelectedIndex = 0;
+            comboBox.SelectedIndex = 1;
         }
         #endregion
 
@@ -206,7 +206,7 @@ namespace SQLiteDataExtractor
             comboBox.DataSource = dataTable;
             comboBox.ValueMember = "value";
             comboBox.DisplayMember = "display";
-            comboBox.SelectedIndex = 0;
+            comboBox.SelectedIndex = 2;
         }
         #endregion
 

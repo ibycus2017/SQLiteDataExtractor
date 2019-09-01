@@ -39,24 +39,24 @@
             this.btnExecution2 = new System.Windows.Forms.Button();
             this.btnExecution1 = new System.Windows.Forms.Button();
             this.tlpMain = new System.Windows.Forms.TableLayoutPanel();
+            this.tlpContainer = new System.Windows.Forms.TableLayoutPanel();
             this.dgvColumns = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tlpContainer = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.cboUseHeaderLine = new System.Windows.Forms.ComboBox();
+            this.cboQuotedField = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.cboDelimiter = new System.Windows.Forms.ComboBox();
-            this.cboQuotedField = new System.Windows.Forms.ComboBox();
-            this.cboUseHeaderLine = new System.Windows.Forms.ComboBox();
             this.tlpBody.SuspendLayout();
             this.tlpFooter.SuspendLayout();
             this.tlpExecutions.SuspendLayout();
             this.tlpMain.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvColumns)).BeginInit();
             this.tlpContainer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvColumns)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -235,6 +235,22 @@
             this.tlpMain.Size = new System.Drawing.Size(784, 448);
             this.tlpMain.TabIndex = 2;
             // 
+            // tlpContainer
+            // 
+            this.tlpContainer.ColumnCount = 1;
+            this.tlpContainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpContainer.Controls.Add(this.dgvColumns, 0, 0);
+            this.tlpContainer.Controls.Add(this.tableLayoutPanel1, 0, 1);
+            this.tlpContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpContainer.Location = new System.Drawing.Point(39, 22);
+            this.tlpContainer.Margin = new System.Windows.Forms.Padding(0);
+            this.tlpContainer.Name = "tlpContainer";
+            this.tlpContainer.RowCount = 2;
+            this.tlpContainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tlpContainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tlpContainer.Size = new System.Drawing.Size(705, 403);
+            this.tlpContainer.TabIndex = 2;
+            // 
             // dgvColumns
             // 
             this.dgvColumns.AllowUserToAddRows = false;
@@ -277,22 +293,6 @@
             this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Column3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // tlpContainer
-            // 
-            this.tlpContainer.ColumnCount = 1;
-            this.tlpContainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpContainer.Controls.Add(this.dgvColumns, 0, 0);
-            this.tlpContainer.Controls.Add(this.tableLayoutPanel1, 0, 1);
-            this.tlpContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpContainer.Location = new System.Drawing.Point(39, 22);
-            this.tlpContainer.Margin = new System.Windows.Forms.Padding(0);
-            this.tlpContainer.Name = "tlpContainer";
-            this.tlpContainer.RowCount = 2;
-            this.tlpContainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.tlpContainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tlpContainer.Size = new System.Drawing.Size(705, 403);
-            this.tlpContainer.TabIndex = 2;
-            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
@@ -315,6 +315,26 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(705, 162);
             this.tableLayoutPanel1.TabIndex = 2;
+            // 
+            // cboUseHeaderLine
+            // 
+            this.cboUseHeaderLine.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cboUseHeaderLine.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboUseHeaderLine.FormattingEnabled = true;
+            this.cboUseHeaderLine.Location = new System.Drawing.Point(214, 83);
+            this.cboUseHeaderLine.Name = "cboUseHeaderLine";
+            this.cboUseHeaderLine.Size = new System.Drawing.Size(488, 28);
+            this.cboUseHeaderLine.TabIndex = 5;
+            // 
+            // cboQuotedField
+            // 
+            this.cboQuotedField.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cboQuotedField.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboQuotedField.FormattingEnabled = true;
+            this.cboQuotedField.Location = new System.Drawing.Point(214, 43);
+            this.cboQuotedField.Name = "cboQuotedField";
+            this.cboQuotedField.Size = new System.Drawing.Size(488, 28);
+            this.cboQuotedField.TabIndex = 4;
             // 
             // label1
             // 
@@ -362,26 +382,6 @@
             this.cboDelimiter.Size = new System.Drawing.Size(488, 28);
             this.cboDelimiter.TabIndex = 3;
             // 
-            // cboQuotedField
-            // 
-            this.cboQuotedField.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cboQuotedField.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboQuotedField.FormattingEnabled = true;
-            this.cboQuotedField.Location = new System.Drawing.Point(214, 43);
-            this.cboQuotedField.Name = "cboQuotedField";
-            this.cboQuotedField.Size = new System.Drawing.Size(488, 28);
-            this.cboQuotedField.TabIndex = 4;
-            // 
-            // cboUseHeaderLine
-            // 
-            this.cboUseHeaderLine.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cboUseHeaderLine.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboUseHeaderLine.FormattingEnabled = true;
-            this.cboUseHeaderLine.Location = new System.Drawing.Point(214, 83);
-            this.cboUseHeaderLine.Name = "cboUseHeaderLine";
-            this.cboUseHeaderLine.Size = new System.Drawing.Size(488, 28);
-            this.cboUseHeaderLine.TabIndex = 5;
-            // 
             // FrmFileExport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -400,8 +400,8 @@
             this.tlpFooter.ResumeLayout(false);
             this.tlpExecutions.ResumeLayout(false);
             this.tlpMain.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvColumns)).EndInit();
             this.tlpContainer.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvColumns)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
