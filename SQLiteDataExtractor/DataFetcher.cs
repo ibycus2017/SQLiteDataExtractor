@@ -11,13 +11,14 @@ namespace SQLiteDataExtractor
 {
     public class DataFetcher
     {
-        #region メンバ変数
+        #region プロパティ
         /// <summary>
-        /// メンバ変数
+        /// プロパティ
         /// </summary>
         public string ConnectionString { get; set; } = System.String.Empty;
         public string TableName { get; set; } = System.String.Empty;
         public List<ConditionsRecordDefine> Conditions { get; set; } = new List<ConditionsRecordDefine>();
+        public string AndOr { get; set; } = " and ";
         #endregion
 
         #region メソッド（データ取得）
@@ -69,8 +70,8 @@ namespace SQLiteDataExtractor
                 for (var i = 0; i <= this.Conditions.Count - 1;i++){
                     var recordDefine = new ConditionsRecordDefine();
                     recordDefine = this.Conditions[i];
-                    stringBuilder.Append((i == 0) ? " where ": " and ");
-                    stringBuilder.Append(recordDefine.ColumnName + " " + recordDefine.Operator + "@" + Convert.ToString(i));
+                    stringBuilder.Append((i == 0) ? " where ": AndOr );
+                    stringBuilder.Append(recordDefine.ColumnName + " " + recordDefine.Operator + " @" + Convert.ToString(i));
                     sqlCommand.Parameters.Add(new SQLiteParameter("@" + Convert.ToString(i), recordDefine.SearchValue));
                 }
             }

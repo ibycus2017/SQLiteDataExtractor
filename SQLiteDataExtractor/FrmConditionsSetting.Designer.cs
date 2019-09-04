@@ -39,6 +39,7 @@
             this.btnExecution2 = new System.Windows.Forms.Button();
             this.btnExecution1 = new System.Windows.Forms.Button();
             this.tlpMain = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvConditions = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,11 +47,16 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewComboBoxColumn1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cboAndOr = new System.Windows.Forms.ComboBox();
             this.tlpBody.SuspendLayout();
             this.tlpFooter.SuspendLayout();
             this.tlpExecutions.SuspendLayout();
             this.tlpMain.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConditions)).BeginInit();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tlpBody
@@ -216,7 +222,7 @@
             this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 90F));
             this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpMain.Controls.Add(this.dgvConditions, 1, 1);
+            this.tlpMain.Controls.Add(this.tableLayoutPanel1, 1, 1);
             this.tlpMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpMain.Location = new System.Drawing.Point(0, 56);
             this.tlpMain.Margin = new System.Windows.Forms.Padding(0);
@@ -227,6 +233,23 @@
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.tlpMain.Size = new System.Drawing.Size(784, 448);
             this.tlpMain.TabIndex = 2;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.AutoScroll = true;
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.dgvConditions, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 1);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(39, 22);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(705, 403);
+            this.tableLayoutPanel1.TabIndex = 2;
             // 
             // dgvConditions
             // 
@@ -244,12 +267,12 @@
             this.dataGridViewComboBoxColumn1});
             this.dgvConditions.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvConditions.EnableHeadersVisualStyles = false;
-            this.dgvConditions.Location = new System.Drawing.Point(42, 25);
+            this.dgvConditions.Location = new System.Drawing.Point(3, 3);
             this.dgvConditions.MultiSelect = false;
             this.dgvConditions.Name = "dgvConditions";
             this.dgvConditions.RowHeadersVisible = false;
             this.dgvConditions.RowTemplate.Height = 21;
-            this.dgvConditions.Size = new System.Drawing.Size(699, 397);
+            this.dgvConditions.Size = new System.Drawing.Size(699, 276);
             this.dgvConditions.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1
@@ -296,6 +319,47 @@
             this.dataGridViewComboBoxColumn1.HeaderText = "演算子";
             this.dataGridViewComboBoxColumn1.Name = "dataGridViewComboBoxColumn1";
             // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.AutoScroll = true;
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
+            this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.cboAndOr, 1, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 282);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 3;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(705, 121);
+            this.tableLayoutPanel2.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Location = new System.Drawing.Point(3, 3);
+            this.label1.Margin = new System.Windows.Forms.Padding(3);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(205, 34);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "結合条件";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // cboAndOr
+            // 
+            this.cboAndOr.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cboAndOr.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboAndOr.FormattingEnabled = true;
+            this.cboAndOr.Location = new System.Drawing.Point(214, 3);
+            this.cboAndOr.Name = "cboAndOr";
+            this.cboAndOr.Size = new System.Drawing.Size(488, 28);
+            this.cboAndOr.TabIndex = 1;
+            // 
             // FrmConditionsSetting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -315,7 +379,10 @@
             this.tlpFooter.ResumeLayout(false);
             this.tlpExecutions.ResumeLayout(false);
             this.tlpMain.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvConditions)).EndInit();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -340,5 +407,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxColumn1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cboAndOr;
     }
 }

@@ -28,6 +28,7 @@ namespace SQLiteDataExtractor
         private static readonly int COLUMN_INDEX_TYPE_NAME = 3;
         private static readonly int COLUMN_INDEX_VALUE = 4;
         private static readonly int COLUMN_INDEX_OPERATOR = 5;
+        private static readonly string FUZZY_SEACH_OPERATOR = "like";
         #endregion
 
         #region コンストラクタ
@@ -110,6 +111,7 @@ namespace SQLiteDataExtractor
         {
             this.MakeBtnExecutions();
             this.MakeDgvConditions();
+            this.MakeCboAndOr();
         }
         #endregion
 
@@ -182,9 +184,9 @@ namespace SQLiteDataExtractor
         }
         #endregion
 
-        #region メソッド（パラメータ取得）
+        #region メソッド（演算子取得）
         /// <summary>
-        /// メソッド（パラメータ取得）
+        /// メソッド（演算子取得）
         /// </summary>
         /// <returns></returns>
         private DataTable FetchRelationShipParameter()
@@ -227,6 +229,12 @@ namespace SQLiteDataExtractor
             dataRow["code"] = "<>";
             dataRow["name"] = "以外";
             dataTable.Rows.Add(dataRow);
+
+            dataRow = dataTable.NewRow();
+            dataRow["code"] = FUZZY_SEACH_OPERATOR;
+            dataRow["name"] = "を含む";
+            dataTable.Rows.Add(dataRow);
+
             return dataTable;
         }
         #endregion
@@ -242,6 +250,44 @@ namespace SQLiteDataExtractor
             dataTableFetcher.ConnectionString = new ConnectionStringFetcher().FetchConnectionString();
             dataTableFetcher.TableName = this.TableName;
             return dataTableFetcher.FetchColumns();
+        }
+        #endregion
+
+        #region メソッド（コンボボックス作成「AND」「OR」）
+        /// <summary>
+        /// メソッド（コンボボックス作成「AND」「OR」）
+        /// </summary>
+        private void MakeCboAndOr()
+        {
+            var comboBox = this.cboAndOr;
+            comboBox.ValueMember = "code";
+            comboBox.DisplayMember = "name";
+            comboBox.DataSource = FetchAndOrMember();
+        }
+        #endregion
+
+        #region メソッド（AND/OR取得）
+        /// <summary>
+        /// メソッド（AND/OR取得）
+        /// </summary>
+        /// <returns></returns>
+        private DataTable FetchAndOrMember()
+        {
+            var dataTable = new DataTable();
+            dataTable.Columns.Add("code", typeof(string));
+            dataTable.Columns.Add("name", typeof(string));
+
+            var dataRow = dataTable.NewRow();
+            dataRow["code"] = " and ";
+            dataRow["name"] = "上記の設定条件すべてを満たす";
+            dataTable.Rows.Add(dataRow);
+
+            dataRow = dataTable.NewRow();
+            dataRow["code"] = " or ";
+            dataRow["name"] = "上記の設定条件のいずれかを満たす";
+            dataTable.Rows.Add(dataRow);
+
+            return dataTable;
         }
         #endregion
 
@@ -277,10 +323,11 @@ namespace SQLiteDataExtractor
         {
             var dataGridView = this.dgvConditions;
             var fetchedConditions = FetchConditions();
-            var frmDataExport = new FrmExtractionResults();
-            frmDataExport.TableName = this.TableName;
-            frmDataExport.Conditions = fetchedConditions;
-            frmDataExport.Show();
+            var frmExtractionResults = new FrmExtractionResults();
+            frmExtractionResults.TableName = this.TableName;
+            frmExtractionResults.Conditions = fetchedConditions;
+            frmExtractionResults.AndOr = Convert.ToString(this.cboAndOr.SelectedValue);
+            frmExtractionResults.Show();
             this.Hide();
             this.Dispose();
         }
@@ -304,6 +351,7 @@ namespace SQLiteDataExtractor
                 recordDefine.ColumnName = Convert.ToString(dataGridViewRow.Cells[COLUMN_INDEX_NAME].Value);
                 recordDefine.Operator  = Convert.ToString(dataGridViewRow.Cells[COLUMN_INDEX_OPERATOR].Value);
                 recordDefine.SearchValue = Convert.ToString(dataGridViewRow.Cells[COLUMN_INDEX_VALUE].Value);
+                if (recordDefine.Operator == FUZZY_SEACH_OPERATOR) recordDefine.SearchValue = "%" + recordDefine.SearchValue + "%";
                 if (recordDefine.Operator != System.String.Empty && 
                     recordDefine.SearchValue != System.String.Empty)
                     conditions.Add(recordDefine);

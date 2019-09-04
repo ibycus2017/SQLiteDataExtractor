@@ -34,10 +34,11 @@ namespace SQLiteDataExtractor
         }
         #endregion
 
-        #region プロパティ（選択されたテーブル名）
+        #region プロパティ
         /// <summary>
-        /// プロパティ（選択されたテーブル名）
+        /// プロパティ
         /// </summary>
+        public string AndOr { get; set; } = " and ";
         public string TableName { get; set; } = System.String.Empty;
         public List<ConditionsRecordDefine> Conditions { get; set; } = new List<ConditionsRecordDefine>();
         #endregion
@@ -189,6 +190,7 @@ namespace SQLiteDataExtractor
             dataFetcher.ConnectionString = new ConnectionStringFetcher().FetchConnectionString();
             dataFetcher.TableName = this.TableName;
             dataFetcher.Conditions = this.Conditions;
+            dataFetcher.AndOr = this.AndOr;
             return dataFetcher.FetchData();
         }
         #endregion
