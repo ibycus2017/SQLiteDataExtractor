@@ -29,6 +29,7 @@ namespace SQLiteDataExtractor
         private static readonly int COLUMN_INDEX_VALUE = 4;
         private static readonly int COLUMN_INDEX_OPERATOR = 5;
         private static readonly string FUZZY_SEACH_OPERATOR = "like";
+        private static readonly string NOT_FUZZY_SEACH_OPERATOR = "not like";
         #endregion
 
         #region コンストラクタ
@@ -235,6 +236,11 @@ namespace SQLiteDataExtractor
             dataRow["name"] = "を含む";
             dataTable.Rows.Add(dataRow);
 
+            dataRow = dataTable.NewRow();
+            dataRow["code"] = NOT_FUZZY_SEACH_OPERATOR;
+            dataRow["name"] = "を含まない";
+            dataTable.Rows.Add(dataRow);
+
             return dataTable;
         }
         #endregion
@@ -351,7 +357,8 @@ namespace SQLiteDataExtractor
                 recordDefine.ColumnName = Convert.ToString(dataGridViewRow.Cells[COLUMN_INDEX_NAME].Value);
                 recordDefine.Operator  = Convert.ToString(dataGridViewRow.Cells[COLUMN_INDEX_OPERATOR].Value);
                 recordDefine.SearchValue = Convert.ToString(dataGridViewRow.Cells[COLUMN_INDEX_VALUE].Value);
-                if (recordDefine.Operator == FUZZY_SEACH_OPERATOR) recordDefine.SearchValue = "%" + recordDefine.SearchValue + "%";
+                if (recordDefine.Operator == FUZZY_SEACH_OPERATOR ||
+                    recordDefine.Operator == NOT_FUZZY_SEACH_OPERATOR) recordDefine.SearchValue = "%" + recordDefine.SearchValue + "%";
                 if (recordDefine.Operator != System.String.Empty && 
                     recordDefine.SearchValue != System.String.Empty)
                     conditions.Add(recordDefine);
