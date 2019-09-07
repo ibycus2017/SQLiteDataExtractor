@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <configration>
   <form name="FrmConditionsSetting">
-    <caption>検索条件設定</caption>
+    <caption>抽出条件設定</caption>
   </form>
   <form name="FrmExtractionResults">
     <caption>データ出力結果</caption>
